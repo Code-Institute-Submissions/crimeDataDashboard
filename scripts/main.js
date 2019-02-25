@@ -30,7 +30,7 @@ function crimeMap(ndx, mapJson) {
         .group(crimeSum)
         .overlayGeoJson(mapJson.features, "region", function(d) {
             return d.properties.lad17nm;
-        }); 
+        });
 }
 
 // Total crime in number format
