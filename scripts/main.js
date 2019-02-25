@@ -20,7 +20,7 @@ function crimeMap(ndx, mapJson) {
 
     var mapRegion = dc.geoChoroplethChart("#crimeMap");    
     var regions = ndx.dimension(dc.pluck('LSOA name', function(d){return d.split(" 0");}));
-    var crimeSum = regions.group().reduceSum(function(d){ return d.crime;});
+    var crimeSum = regions.group();
 
     mapRegion
         .width(600)
@@ -29,7 +29,6 @@ function crimeMap(ndx, mapJson) {
         // .projection()
         .group(crimeSum)
         .overlayGeoJson(mapJson.features, "region", function(d) {
-            console.log(d.properties.lad17nm);
             return d.properties.lad17nm;
         }); 
 }
