@@ -1,5 +1,5 @@
 queue()
-    .defer(d3.csv, "data/2018-01/2018-01-hertfordshire-street.csv")
+    .defer(d3.csv, "data/2018Jan.csv")
     .defer(d3.json, "data/hertfordshire.json")
     .await(makeGraphs);
 
@@ -19,8 +19,12 @@ function makeGraphs(error, crimeData, mapJson) {
 function crimeMap(ndx, mapJson) {
 
     var mapRegion = dc.geoChoroplethChart("#crimeMap");    
-    var regions = ndx.dimension(dc.pluck('LSOA name', function(d){return d.split(" 0");}));
-    var crimeSum = regions.group();
+    var regions = ndx.dimension(dc.pluck('LSOA name', function(d) {
+        return d.split(" 0")[0];
+    }));
+    var crimeSum = regions.group(function(d){
+        console.log(d);
+    });
 
     mapRegion
         .width(600)
@@ -42,9 +46,9 @@ function totalCrime(ndx) {
         .formatNumber(d3.format(".0f"))
         .valueAccessor( function(d) { return d; } )
         .html({
-            one:'%number crime',
+            one:'%number Crime',
             some:'%number Crimes',
-            none:'no records'});
+            none:'No Records'});
 };
 
 // Type of crime in pie chart format
@@ -53,7 +57,7 @@ function crimeType(ndx) {
     var typeGroup = typeDim.group();
 
     dc.pieChart('#crimeType')
-        .width(550)
+        .width(400)
         .height(550)
         .radius(150)
         .innerRadius(65)
@@ -63,16 +67,16 @@ function crimeType(ndx) {
         .dimension(typeDim)
         .group(typeGroup)
         .renderLabel(false)
-        .legend(dc.legend().x(400).y(125).itemHeight(15).gap(5));
+        .legend(dc.legend().x(320).y(125).itemHeight(15).gap(5));
 };
 
 // Outcome of crime in pie chart format
-function crimeOutcome(ndx) {    
+function crimeOutcome(ndx) {
     var outcomeDim = ndx.dimension(dc.pluck('Last outcome category'));
     var outcomeGroup = outcomeDim.group();
 
     dc.pieChart('#crimeOutcome')
-        .width(550)
+        .width(600)
         .height(550)
         .radius(150)
         .innerRadius(65)
@@ -82,7 +86,7 @@ function crimeOutcome(ndx) {
         .dimension(outcomeDim)
         .group(outcomeGroup)
         .renderLabel(false)
-        .legend(dc.legend().x(430).y(35).itemHeight(15).gap(5));
+        .legend(dc.legend().x(420).y(35).itemHeight(15).gap(5));
 };
 
 // Area of crime in bar chart format
@@ -109,5 +113,6 @@ function crimeArea(ndx) {
         .xUnits(dc.units.ordinal)
         .xAxisLabel("Area of crime")
         .elasticY(true)
-        .yAxis().ticks(20);
+        .renderHorizontalGridLines(true)
+        .yAxis().ticks(10);
 }
