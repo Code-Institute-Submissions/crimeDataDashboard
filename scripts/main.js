@@ -25,7 +25,9 @@ function crimeMap(ndx, mapJson) {
     var crimeSum = regions.group();
 
     var centre = d3.geo.centroid(mapJson);
-    var projection = d3.geo.mercator().center(centre).scale(30000).translate([300, 300]);
+    var projection = d3.geo.mercator().center(centre).scale(29000).translate([290, 290]);
+    var colorBrewer = ['#f7fcf0','#e0f3db','#ccebc5','#a8ddb5','#7bccc4','#4eb3d3','#2b8cbe','#0868ac','#084081'];
+    var max = crimeSum.top(1)[0].value;
 
     mapRegion
         .width(500)
@@ -33,6 +35,9 @@ function crimeMap(ndx, mapJson) {
         .dimension(regions)
         .projection(projection)
         .group(crimeSum)
+        .colors(colorBrewer)
+        .colorDomain([0, max])
+        .colorAccessor(function(d, i){ return d;})
         .overlayGeoJson(mapJson.features, "region", function(d) {
             return d.properties.lad17nm;
         });
