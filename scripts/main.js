@@ -7,7 +7,7 @@ function makeGraphs(error, crimeData, mapJson) {
     var ndx = crossfilter(crimeData);
 
     crimeType(ndx);
-    crimeArea(ndx);
+    // crimeArea(ndx);
     crimeOutcome(ndx);
     totalCrime(ndx);
     crimeMap(ndx, mapJson);    
@@ -22,15 +22,16 @@ function crimeMap(ndx, mapJson) {
     var regions = ndx.dimension(dc.pluck('LSOA name', function(d) {
         return d.split(" 0")[0];
     }));
-    var crimeSum = regions.group(function(d){
-        console.log(d);
-    });
+    var crimeSum = regions.group();
+
+    var centre = d3.geo.centroid(mapJson);
+    var projection = d3.geo.mercator().center(centre).scale(30000).translate([300, 300]);
 
     mapRegion
-        .width(600)
-        .height(600)
+        .width(500)
+        .height(500)
         .dimension(regions)
-        // .projection()
+        .projection(projection)
         .group(crimeSum)
         .overlayGeoJson(mapJson.features, "region", function(d) {
             return d.properties.lad17nm;
@@ -90,29 +91,29 @@ function crimeOutcome(ndx) {
 };
 
 // Area of crime in bar chart format
-function crimeArea(ndx) {  
-    var areaDim = ndx.dimension(dc.pluck('LSOA name', function(d){
-        return d.split(" 0")[0];
-    }));
-    var areaGroup = areaDim.group();
+// function crimeArea(ndx) {  
+//     var areaDim = ndx.dimension(dc.pluck('LSOA name', function(d){
+//         return d.split(" 0")[0];
+//     }));
+//     var areaGroup = areaDim.group();
 
-    dc.barChart("#crimeArea")
-        .width(1100)
-        .height(400)
-        .margins({
-            top: 10,
-            right: 50,
-            bottom: 30,
-            left: 50
-        })
-        .dimension(areaDim)
-        .group(areaGroup)
-        .transitionDuration(500)
-        .colors(d3.scale.category10())
-        .x(d3.scale.ordinal())
-        .xUnits(dc.units.ordinal)
-        .xAxisLabel("Area of crime")
-        .elasticY(true)
-        .renderHorizontalGridLines(true)
-        .yAxis().ticks(10);
-}
+//     dc.barChart("#crimeArea")
+//         .width(1100)
+//         .height(400)
+//         .margins({
+//             top: 10,
+//             right: 50,
+//             bottom: 30,
+//             left: 50
+//         })
+//         .dimension(areaDim)
+//         .group(areaGroup)
+//         .transitionDuration(500)
+//         .colors(d3.scale.category10())
+//         .x(d3.scale.ordinal())
+//         .xUnits(dc.units.ordinal)
+//         .xAxisLabel("Area of crime")
+//         .elasticY(true)
+//         .renderHorizontalGridLines(true)
+//         .yAxis().ticks(10);
+// }
