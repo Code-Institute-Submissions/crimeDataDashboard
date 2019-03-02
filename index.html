@@ -9,44 +9,58 @@
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/dc.min.css">
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <h1>Street crime in Hertfordshire</h1>
-        </div>
 
+    <nav class="navbar sticky-top navbar-dark bg-dark">
+        <span class="navbar-brand mb-0 h1">Street crime in Hertfordshire</span>
+        <span class="navbar-text">
+            <button class="btn btn-dark"><a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a></button>
+        </span>
+    </nav>
+
+    <div class="container-fluid">
         <div class="row">
             <div class="col">
-                <div id="totalCrime" class="panel">
-                    <h2>Total Crime</h2>
+                <div id="totalCrime" class="">
+                    <h3>Total Crime</h3>
                 </div>
             </div>
         </div>
 
         <div class="row">
-            <div class="col">
-                <div id="crimeMap" class="panel">
-                    <h2>Crime Map</h2>
+            <div class="col-sm-12 col-md-12 col-lg-4" id="one">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Crime Map</h3>
+                    </div>
+                    <div id="crimeMap" class="card-img-top"></div>
                 </div>
             </div>
 
-            <div class="col">
-                <div id="crimeType" class="panel">
-                    <h2>Type of Crime</h2>
+            <div class="col-sm-12 col-md-12 col-lg-4" id="two">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Type of crime</h3>
+                    </div>
+                    <div id="crimeType" class="card-img-top"></div>
                 </div>
             </div>
 
-            <div class="col">
-                <div id="crimeOutcome" class="panel">
-                    <h2>Outcome's of Crime</h2>
+            <div class="col-sm-12 col-md-12 col-lg-4" id="three">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Outcome of Crime</h3>
+                    </div>
+                    <div id="crimeOutcome" class="card-img-top"></div>
                 </div>
             </div>
         </div>
     </div>
-
+    <!-- <script type="text/javascript" src="scripts/bootstrap.min.js"></script>-->
     <script type="text/javascript" src="scripts/d3.min.js"></script>
     <script type="text/javascript" src="scripts/crossfilter.min.js"></script>
     <script type="text/javascript" src="scripts/dc.min.js"></script>
