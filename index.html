@@ -17,55 +17,71 @@
 
     <nav class="navbar sticky-top navbar-dark bg-dark">
         <span class="navbar-brand mb-0 h1">Street crime in Hertfordshire</span>
+        <span id="totalCrime" class="mb-0 h4"></span>
         <span class="navbar-text">
             <button class="btn btn-dark"><a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a></button>
         </span>
     </nav>
 
-    <div class="container-fluid">
+    <main class="container-fluid">
         <div class="row">
-            <div class="col">
-                <div id="totalCrime" class="">
-                    <h3>Total Crime</h3>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-12 col-md-12 col-lg-4" id="one">
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="card-title">Crime Map</h3>
+            <!-- Left coloumn for month selection -->
+            <div class="col-sm-1 left-bar">
+                <div class="col-sm-12">
+                    <div id="monthSelect" class="text-center">
+                        <h5>Select Month<br><small>(Ctrl + Click to select multiple)</small></h5>
                     </div>
-                    <div id="crimeMap" class="card-img-top"></div>
                 </div>
             </div>
 
-            <div class="col-sm-12 col-md-12 col-lg-4" id="two">
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="card-title">Type of crime</h3>
+            <!-- Main section for all data rendering -->
+            <div class="col-sm-11 main-body">
+                <div class="row">
+                    <div class="col-sm-12 col-md-5" id="one">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Crime Map <small>(Click on a region for refined info)</small></h5>
+                            </div>
+                            <div id="crimeMap" class="card-img-top"></div>
+                        </div>
                     </div>
-                    <div id="crimeType" class="card-img-top"></div>
-                </div>
-            </div>
 
-            <div class="col-sm-12 col-md-12 col-lg-4" id="three">
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="card-title">Outcome of Crime</h3>
+                    <div class="col-sm-12 col-md-5" id="two">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">Type of crime</h3>
+                            </div>
+                            <div id="crimeType" class="card-img-top"></div>
+                        </div>
                     </div>
-                    <div id="crimeOutcome" class="card-img-top"></div>
+
+                    <div class="col-sm-12 col-md-5" id="four">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">Month total</h3>
+                            </div>
+                            <div id="monthTotal" class="card-img-top"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 col-md-5" id="three">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">Outcome of Crime</h3>
+                            </div>
+                            <div id="crimeOutcome" class="card-img-top"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- <script type="text/javascript" src="scripts/bootstrap.min.js"></script>-->
-    <script type="text/javascript" src="scripts/d3.min.js"></script>
-    <script type="text/javascript" src="scripts/crossfilter.min.js"></script>
-    <script type="text/javascript" src="scripts/dc.min.js"></script>
-    <script type="text/javascript" src="scripts/queue.min.js"></script>
-    <script type="text/javascript" src="scripts/main.js"></script>
+        </main>
+
+        <!-- <script type="text/javascript" src="scripts/bootstrap.min.js"></script>-->
+        <script type="text/javascript" src="scripts/d3.min.js"></script>
+        <script type="text/javascript" src="scripts/crossfilter.min.js"></script>
+        <script type="text/javascript" src="scripts/dc.min.js"></script>
+        <script type="text/javascript" src="scripts/queue.min.js"></script>
+        <script type="text/javascript" src="scripts/main.js"></script>
 
 </body>
 

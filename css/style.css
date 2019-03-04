@@ -1,4 +1,45 @@
 body  {
-    background-color: rgb(54, 54, 54);
-    color: rgb(196, 196, 196);
+    background-color: rgb(209, 209, 209);
+    color: rgb(167, 167, 167);
+}
+
+h5 small {
+    font-size: 12px;
+    letter-spacing: -0.5px;
+    word-spacing: -0.5px;
+}
+
+.left-bar {
+    min-height: 100vh;
+    background: rgb(59, 59, 59);
+}
+
+.main-body {
+    min-height: 100vh;
+}
+
+.main-body .card {
+    background: transparent;
+    color: rgb(34, 34, 34);
+    margin-top: 5px
+}
+
+/* Row chart settings */
+.dc-chart g.row text { 
+    fill: rgb(34, 34, 34);
+}
+
+.dc-chart {}
+
+.dc-chart .dc-select-menu {
+    background: transparent;
+    text-align: center;
+    color: rgb(224, 224, 224);
+    overflow: hidden;
+    border: none;
+    width: 100%;
+}
+
+.dc-chart .dc-select-menu .dc-select-option {
+    
 }
