@@ -45,22 +45,23 @@ function crimeMap(ndx, mapJson) {
     var crimeSum = regions.group();
 
     var centre = d3.geo.centroid(mapJson);
-    var projection = d3.geo.mercator().center(centre).scale(32000).translate([370, 250]);
+    var projection = d3.geo.mercator().center(centre).scale(28500).translate([370, 220]);
     var colorBrewer = ['#f7fcf0', '#e0f3db', '#ccebc5', '#a8ddb5', '#7bccc4', '#4eb3d3', '#2b8cbe', '#0868ac', '#084081'];
     var max = crimeSum.top(1)[0].value;
+    var min = crimeSum.top(200).reverse()[0].value;
 
     mapRegion
         .width(width)
-        .height(500)
+        .height(400)
         .dimension(regions)
         .projection(projection)
         .group(crimeSum)
         .colors(d3.scale.quantize().range(colorBrewer))
-        .colorDomain([0, max])
-        .colorCalculator(function (d) {
+        .colorDomain([min, max])
+        .colorCalculator(function(d) {
             return d ? mapRegion.colors()(d) : '#ccc';
         })
-        .overlayGeoJson(mapJson.features, "region", function (d) {
+        .overlayGeoJson(mapJson.features, "region", function(d) {
             return d.properties.lad17nm;
         });
 }
@@ -90,10 +91,10 @@ function crimeType(ndx) {
 
     dc.pieChart('#crimeType')
         .width(width)
-        .height(500)
+        .height(400)
         .radius(150)
         .innerRadius(45)
-        .externalRadiusPadding(50)
+        .externalRadiusPadding(30)
         .transitionDuration(1500)
         .cx([150])
         .colors(d3.scale.category20())
@@ -105,57 +106,46 @@ function crimeType(ndx) {
 
 // Outcome of crime row chart
 function crimeOutcome(ndx) {
+
     var width = document.getElementById("three").clientWidth;
     var outcomeDim = ndx.dimension(dc.pluck('Last outcome category'));
     var outcomeGroup = outcomeDim.group();
 
     dc.rowChart("#crimeOutcome")
         .width(width)
-        .height(500)
+        .height(300)
         .dimension(outcomeDim)
         .group(outcomeGroup)
         .valueAccessor(function(p) {
             return p.value;
         })  
         .gap(1.5)    
-        .elasticX(true);
+        .elasticX(true)
+        .cap(10);
 }
 
+// Total crimes in each month
 function monthTotal(ndx) {
     var width = document.getElementById("four").clientWidth;
     var monthDim = ndx.dimension(dc.pluck('Month'));
     var monthGroup = monthDim.group();
 
-    dc.pieChart('#monthTotal')
+    dc.barChart("#monthTotal")
         .width(width)
-        .height(500)
-        .radius(150)
-        .innerRadius(45)
-        .externalRadiusPadding(50)
-        .transitionDuration(1500)
-        .cx([150])
-        .colors(d3.scale.category20())
+        .height(300)
+        .margins({
+            top: 10,
+            right: 50,
+            bottom: 30,
+            left: 50
+        })
         .dimension(monthDim)
-        .group(monthGroup);
-};
-
-// // Outcome of crime in pie chart format
-// function crimeOutcome(ndx) {
-//     var width = document.getElementById("three").clientWidth;
-//     var outcomeDim = ndx.dimension(dc.pluck('Last outcome category'));
-//     var outcomeGroup = outcomeDim.group();
-
-//     dc.pieChart('#crimeOutcome')
-//         .width(width)
-//         .height(500)
-//         .radius(150)
-//         .innerRadius(45)
-//         .externalRadiusPadding(50)
-//         .transitionDuration(1500)
-//         .cx([150])
-//         .colors(d3.scale.category10())
-//         .dimension(outcomeDim)
-//         .group(outcomeGroup)
-//         .renderLabel(false)
-//         .legend(dc.legend().x(300).y(15).itemHeight(15).gap(5));
-// };
+        .group(monthGroup)
+        .transitionDuration(500)
+        .renderHorizontalGridLines(true)
+        .x(d3.scale.ordinal())
+        .xUnits(dc.units.ordinal)
+        .xAxisLabel("Outcome Of Month")
+        .elasticY(true)
+        .yAxis().ticks(10);
+}
