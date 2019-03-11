@@ -39,29 +39,30 @@ function crimeMonth(ndx) {
 
 //Create map of hertfordshire
 function crimeMap(ndx, mapJson) {
-    var width = document.getElementById("one").clientWidth;
     var mapRegion = dc.geoChoroplethChart("#crimeMap");
     var regions = ndx.dimension(area);
     var crimeSum = regions.group();
 
     var centre = d3.geo.centroid(mapJson);
     var projection = d3.geo.mercator().center(centre).scale(28500).translate([370, 220]);
-    var colorBrewer = ['#f7fcf0', '#e0f3db', '#ccebc5', '#a8ddb5', '#7bccc4', '#4eb3d3', '#2b8cbe', '#0868ac', '#084081'];
+    var colorBrewer = ['#b0e0c3','#9fd0b2','#8fc0a2','#7fb192','#6ea182','#5e9272','#4f8363','#407555','#306646'];
     var max = crimeSum.top(1)[0].value;
-    var min = crimeSum.top(200).reverse()[0].value;
+    var min = crimeSum.top(9).reverse()[0].value;
+
+    
 
     mapRegion
-        .width(width)
+        .width(600)
         .height(400)
         .dimension(regions)
         .projection(projection)
         .group(crimeSum)
         .colors(d3.scale.quantize().range(colorBrewer))
         .colorDomain([min, max])
-        .colorCalculator(function(d) {
+        .colorCalculator(function (d) {
             return d ? mapRegion.colors()(d) : '#ccc';
         })
-        .overlayGeoJson(mapJson.features, "region", function(d) {
+        .overlayGeoJson(mapJson.features, "region", function (d) {
             return d.properties.lad17nm;
         });
 }
@@ -85,7 +86,7 @@ function totalCrime(ndx) {
 
 // Type of crime in pie chart format
 function crimeType(ndx) {
-    var width = document.getElementById("two").clientWidth;
+    var width = document.getElementById("two").offsetWidth;
     var typeDim = ndx.dimension(dc.pluck('Crime type'));
     var typeGroup = typeDim.group();
 
@@ -106,8 +107,7 @@ function crimeType(ndx) {
 
 // Outcome of crime row chart
 function crimeOutcome(ndx) {
-
-    var width = document.getElementById("three").clientWidth;
+    var width = document.getElementById("three").offsetWidth;
     var outcomeDim = ndx.dimension(dc.pluck('Last outcome category'));
     var outcomeGroup = outcomeDim.group();
 
@@ -116,17 +116,17 @@ function crimeOutcome(ndx) {
         .height(300)
         .dimension(outcomeDim)
         .group(outcomeGroup)
-        .valueAccessor(function(p) {
+        .valueAccessor(function (p) {
             return p.value;
-        })  
-        .gap(1.5)    
+        })
+        .gap(1.2)
         .elasticX(true)
-        .cap(10);
+        .cap(12);
 }
 
 // Total crimes in each month
 function monthTotal(ndx) {
-    var width = document.getElementById("four").clientWidth;
+    var width = document.getElementById("four").offsetWidth;
     var monthDim = ndx.dimension(dc.pluck('Month'));
     var monthGroup = monthDim.group();
 
