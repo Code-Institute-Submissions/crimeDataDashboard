@@ -1,3 +1,28 @@
+var opts = {
+    lines: 12, // The number of lines to draw
+    length: 5, // The length of each line
+    width: 4, // The line thickness
+    radius: 13, // The radius of the inner circle
+    scale: 1.7, // Scales overall size of the spinner
+    corners: 1, // Corner roundness (0..1)
+    color: '#038531', // CSS color or array of colors
+    fadeColor: 'transparent', // CSS color or array of colors
+    speed: 1.4, // Rounds per second
+    rotate: 0, // The rotation offset
+    animation: 'spinner-line-fade-quick', // The CSS animation name for the lines
+    direction: 1, // 1: clockwise, -1: counterclockwise
+    zIndex: 2e9, // The z-index (defaults to 2000000000)
+    className: 'spinner', // The CSS class to assign to the spinner
+    top: '50%', // Top position relative to parent
+    left: '50%', // Left position relative to parent
+    shadow: '0 0 1px transparent', // Box-shadow for the lines
+    position: 'absolute' // Element positioning
+};
+
+var target = document.getElementById('loader');
+var spinner = new Spinner(opts).spin(target);
+
+
 queue()
     .defer(d3.csv, "data/crimeData.csv")
     .defer(d3.json, "data/hertfordshire.json")
@@ -14,6 +39,9 @@ function makeGraphs(error, crimeData, mapJson) {
     monthTotal(ndx);
 
     dc.renderAll();
+    spinner.stop();
+
+    document.getElementById('loader').style.visibility = 'hidden';
 }
 
 //Variable to condense region name from csv file
@@ -45,11 +73,11 @@ function crimeMap(ndx, mapJson) {
 
     var centre = d3.geo.centroid(mapJson);
     var projection = d3.geo.mercator().center(centre).scale(28500).translate([370, 220]);
-    var colorBrewer = ['#b0e0c3','#9fd0b2','#8fc0a2','#7fb192','#6ea182','#5e9272','#4f8363','#407555','#306646'];
+    var colorBrewer = ['#b0e0c3', '#9fd0b2', '#8fc0a2', '#7fb192', '#6ea182', '#5e9272', '#4f8363', '#407555', '#306646'];
     var max = crimeSum.top(1)[0].value;
     var min = crimeSum.top(9).reverse()[0].value;
 
-    
+
 
     mapRegion
         .width(600)
