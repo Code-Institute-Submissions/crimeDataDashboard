@@ -1,3 +1,4 @@
+// Options for spin.js loader
 var opts = {
     lines: 12, // The number of lines to draw
     length: 5, // The length of each line
@@ -22,12 +23,13 @@ var opts = {
 var target = document.getElementById('loader');
 var spinner = new Spinner(opts).spin(target);
 
-
+//Queue data and wait for functions to execute and be called 
 queue()
     .defer(d3.csv, "data/crimeData.csv")
     .defer(d3.json, "data/hertfordshire.json")
     .await(makeGraphs);
 
+// Call all chart functions
 function makeGraphs(error, crimeData, mapJson) {
     var ndx = crossfilter(crimeData);
 
@@ -39,8 +41,9 @@ function makeGraphs(error, crimeData, mapJson) {
     monthTotal(ndx);
 
     dc.renderAll();
-    spinner.stop();
 
+    // Stop spinner and hidde overlay
+    spinner.stop();
     document.getElementById('loader').style.visibility = 'hidden';
 }
 
@@ -76,7 +79,6 @@ function crimeMap(ndx, mapJson) {
     var colorBrewer = ['#b0e0c3', '#9fd0b2', '#8fc0a2', '#7fb192', '#6ea182', '#5e9272', '#4f8363', '#407555', '#306646'];
     var max = crimeSum.top(1)[0].value;
     var min = crimeSum.top(9).reverse()[0].value;
-
 
 
     mapRegion
@@ -130,12 +132,12 @@ function crimeType(ndx) {
         .dimension(typeDim)
         .group(typeGroup)
         .renderLabel(false)
-        .legend(dc.legend().x(320).y(125).itemHeight(15).gap(5));
+        .legend(dc.legend().x(320).y(60).itemHeight(15).gap(5));
 };
 
 // Outcome of crime row chart
 function crimeOutcome(ndx) {
-    var width = document.getElementById("three").offsetWidth;
+    var width = document.getElementById("four").offsetWidth;
     var outcomeDim = ndx.dimension(dc.pluck('Last outcome category'));
     var outcomeGroup = outcomeDim.group();
 
@@ -154,7 +156,7 @@ function crimeOutcome(ndx) {
 
 // Total crimes in each month
 function monthTotal(ndx) {
-    var width = document.getElementById("four").offsetWidth;
+    var width = document.getElementById("three").offsetWidth;
     var monthDim = ndx.dimension(dc.pluck('Month'));
     var monthGroup = monthDim.group();
 

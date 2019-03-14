@@ -15,7 +15,7 @@
 <body>
     <nav class="navbar sticky-top navbar-dark bg-dark">
         <span class="navbar-brand mb-0 h1">Street crime in Hertfordshire</span>
-        <span id="totalCrime" class="mb-0 h4"></span>
+        <span id="totalCrime" class="h4 text-white"></span>
         <span class="navbar-text">
             <button class="btn btn-dark"><a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a></button>
         </span>
@@ -36,42 +36,40 @@
             <div class="col-sm-11 main-body">
                 <div class="row">
                     <div id="loader"></div>
-                    
-                    <div class="col-sm-12 col-md-6" id="one">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Crime Map <small>(Click on a region for refined info)</small></h5>
-                            </div>
-                            <div id="crimeMap" class="card-img-top">
-                                
+
+                    <div class="col-sm-12 col-md-6">
+                        <div class="card" id="one">
+                            <h5 class="card-header text-white bg-secondary">Crime Map <small>(Click on a region for refined info)</small></h5>
+                            <div class="card-body bg-light">
+                                <div id="crimeMap" class="card-img-top"></div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-sm-12 col-md-5" id="two">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Type of crime</h5>
+                    <div class="col-sm-12 col-md-5">
+                        <div class="card" id="two">
+                            <h5 class="card-header text-white bg-secondary">Type of crime</h5>
+                            <div class="card-body bg-light">
+                                <div id="crimeType" class="card-img-top"></div>
                             </div>
-                            <div id="crimeType" class="card-img-top"></div>
                         </div>
                     </div>
 
-                    <div class="col-sm-12 col-md-5" id="four">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Month total</h5>
-                            </div>
-                            <div id="monthTotal" class="card-img-top"></div>
+                    <div class="col-sm-12 col-md-5">
+                        <div class="card" id="three">
+                            <h5 class="card-header text-white bg-secondary">Month total</h5>
+                            <div class="card-body bg-light">
+                                <div id="monthTotal" class="card-img-top"></div>
+                            </div>                            
                         </div>
                     </div>
 
-                    <div class="col-sm-12 col-md-6" id="three">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Outcome of Crime</h5>
-                            </div>
-                            <div id="crimeOutcome" class="card-img-top"></div>
+                    <div class="col-sm-12 col-md-6">
+                        <div class="card" id="four">
+                                <h5 class="card-header text-white bg-secondary">Outcome of Crime</h5>
+                            <div class="card-body bg-light">
+                                <div id="crimeOutcome" class="card-img-top"></div>
+                            </div>                            
                         </div>
                     </div>
                 </div>
