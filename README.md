@@ -18,24 +18,23 @@ This project it set visually display the data gathered by the Police Force in He
 ## Technologies Used
 
 - [HTML](#)
-    -
--[CSS](#)
-    -
+    - #
+- [CSS](#)
+    - #
 -[JavaScript](#)
-    -
+    - #
 - [D3.js](#)
-    - 
+    - #
 - [DC.js](#)
-    - 
+    - #
 - [Crossfilter.js](#)
-    -
+    - #
 - [Queue.js](#)
-    -
+    - #
 - [Bootstrap](#)
-    -
+    - #
 - [Spin.js](#)
-    -
--
+    - #
 
 ## Testing
 
