@@ -132,6 +132,9 @@ function crimeType(ndx) {
         .dimension(typeDim)
         .group(typeGroup)
         .renderLabel(false)
+        .title(function(d){
+            return d.value
+        })
         .legend(dc.legend().x(320).y(60).itemHeight(15).gap(5));
 };
 
@@ -154,13 +157,15 @@ function crimeOutcome(ndx) {
         .cap(12);
 }
 
-// Total crimes in each month
+// Total crimes in each month bar chart
 function monthTotal(ndx) {
+    var chart = dc.barChart("#monthTotal")
     var width = document.getElementById("three").offsetWidth;
     var monthDim = ndx.dimension(dc.pluck('Month'));
     var monthGroup = monthDim.group();
+    
 
-    dc.barChart("#monthTotal")
+    chart
         .width(width)
         .height(300)
         .margins({
