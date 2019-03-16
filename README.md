@@ -17,37 +17,40 @@ This project it set visually display the data gathered by the Police Force in He
 
 ## Technologies Used
 
-- [HTML](#)
-    - #
-- [CSS](#)
-    - #
--[JavaScript](#)
-    - #
-- [D3.js](#)
-    - #
-- [DC.js](#)
-    - #
-- [Crossfilter.js](#)
-    - #
-- [Queue.js](#)
-    - #
-- [Bootstrap](#)
-    - #
-- [Spin.js](#)
-    - #
+- [HTML](https://www.w3schools.com/html)
+    - This is used for the main structre of the web page
+- [CSS](https://www.w3schools.com/css)
+    - This is used fot the main styling of the web page
+- [JavaScript](https://www.w3schools.com/js/))
+    - This is used for the main interctivity of the webpage
+- [D3.js](https://d3js.org/)
+    - This is a libaray used to create and render charts using SVG elements to display data in a visual format
+- [DC.js](https://dc-js.github.io/dc.js/)
+    - This is used to compliment D3.js and creat better looking interactive charts, give a rich depth of user interactivity, allowing them to see different data.
+- [Crossfilter.js](http://square.github.io/crossfilter/)
+    - This is used with D3 and DC to filter data, group it in particular groups and show user selected data.
+- [Queue.js](https://github.com/d3/d3-queue)
+    - This is used to queue data sets and load them into DC/D3
+- [Bootstrap](https://getbootstrap.com/)
+    - CSS and JS libray for quick and reliable responsive websites.
+- [Spin.js](https://spin.js.org/)
+    - Used to creat the spinner while the data is being loaded.
 
 ## Testing
 
 
 ## Deployment
 
+The dashboard has been deployed on Git Hub Pages:
+[Link to the dasboard](https://samuelwatson89.github.io/crimeDataDashboard/)
+Only a single version has been worked on in the master branch
 
 ## Credits
 
+
 ### Content
 
-
-### Media
-
+Data used has been supplied by [Police Database](https://data.police.uk/)
 
 ### Acknowledgements
+[Emma Saunders](https://www.lynda.com/Emma-Saunders/7094528-1.html) & [Ray Villalobos](https://www.lynda.com/Ray-Villalobos/832401-1.html) on [Lynda.com](https://www.lynda.com) for the uploaded tutorials which assisted in explaining D3, DC and Crossfilter.
