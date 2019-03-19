@@ -45,4 +45,22 @@ h5 small {
   border: none;
   width: 100%;
 }
+
+@media (max-width: 766px) {
+  .left-bar {
+    min-height: 10vh;
+    background: red;
+  }
+  .dc-chart {
+    width: 90vw;
+  }
+  .dc-chart .dc-select-menu {
+    background: yellow;
+    text-align: center;
+    color: #e0e0e0;
+    overflow: hidden;
+    border: none;
+    width: 100%;
+  }
+}
 /*# sourceMappingURL=style.css.map */

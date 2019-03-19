@@ -52,6 +52,13 @@ var area = dc.pluck('LSOA name', function (d) {
     return d.split(" 0")[0];
 })
 
+// Colorbrewer for chart colours
+var colorBrewer = d3.scale.quantize().range(['#fff0e2','#f8dbc6','#efc7aa','#e6b38e','#dc9f73','#d18b59','#c5783f','#b76524','#aa5200']);
+var colorBrewerTwo = d3.scale.ordinal().range(['#b0e0c3', '#9fd0b2', '#8fc0a2', '#7fb192', '#6ea182', '#5e9272', '#4f8363', '#407555', '#306646'].reverse()
+)
+// Golden ratio
+var gold = 2;
+
 // Create Month selector form data
 function crimeMonth(ndx) {
     var monthDim = ndx.dimension(dc.pluck('Month'));
@@ -74,24 +81,27 @@ function crimeMap(ndx, mapJson) {
     var regions = ndx.dimension(area);
     var crimeSum = regions.group();
 
-    var centre = d3.geo.centroid(mapJson);
-    var projection = d3.geo.mercator().center(centre).scale(28500).translate([370, 220]);
-    var colorBrewer = ['#b0e0c3', '#9fd0b2', '#8fc0a2', '#7fb192', '#6ea182', '#5e9272', '#4f8363', '#407555', '#306646'];
+    var width = document.getElementById("one").offsetWidth;
+    var height = 400;
     var max = crimeSum.top(1)[0].value;
     var min = crimeSum.top(9).reverse()[0].value;
 
+    var centre = d3.geo.centroid(mapJson);
+    var middle = width / 2;
+    var scale = 25000 + (middle + width);
+    var projection = d3.geo.mercator().center(centre).scale(scale).translate([middle, 220]);
 
     mapRegion
-        .width(600)
-        .height(400)
+        .width(width)
+        .height(height)
         .dimension(regions)
         .projection(projection)
         .group(crimeSum)
-        .colors(d3.scale.quantize().range(colorBrewer))
+        .colors(colorBrewer)
         .colorDomain([min, max])
         .colorCalculator(function (d) {
             return d ? mapRegion.colors()(d) : '#ccc';
-        })
+        })        
         .overlayGeoJson(mapJson.features, "region", function (d) {
             return d.properties.lad17nm;
         });
@@ -122,7 +132,7 @@ function crimeType(ndx) {
 
     dc.pieChart('#crimeType')
         .width(width)
-        .height(400)
+        .height(width / gold)
         .radius(150)
         .innerRadius(45)
         .externalRadiusPadding(30)
@@ -146,15 +156,16 @@ function crimeOutcome(ndx) {
 
     dc.rowChart("#crimeOutcome")
         .width(width)
-        .height(300)
+        .height(width / gold)
         .dimension(outcomeDim)
         .group(outcomeGroup)
         .valueAccessor(function (p) {
             return p.value;
         })
+        .colors(colorBrewerTwo)
         .gap(1.2)
         .elasticX(true)
-        .cap(12);
+        .cap(9);
 }
 
 // Total crimes in each month bar chart
@@ -167,7 +178,7 @@ function monthTotal(ndx) {
 
     chart
         .width(width)
-        .height(300)
+        .height(width / gold)
         .margins({
             top: 10,
             right: 50,
