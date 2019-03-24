@@ -24,7 +24,7 @@
     <main class="container-fluid">
         <div class="row">
             <!-- Left coloumn for month selection -->
-            <div class="col-sm-1 left-bar">
+            <div class="col-sm-12 col-md-2 col-lg-1 left-bar">
                 <div class="col-sm-12">
                     <div id="monthSelect" class="text-center">
                         <h5>Select Month<br><small>(Ctrl + Click to select multiple)</small></h5>
@@ -33,13 +33,14 @@
             </div>
 
             <!-- Main section for all data rendering -->
-            <div class="col-sm-11 main-body">
+            <div class="col-sm-12 col-md-10 col-lg-11 main-body">
                 <div class="row">
                     <div id="loader"></div>
 
                     <div class="col-sm-12">
                         <div class="card" id="one">
-                            <h5 class="card-header text-white bg-secondary">Crime Map <small>(Click on a region for refined info)</small></h5>
+                            <h5 class="card-header text-white bg-secondary">Crime Map <small>(Click on a region for
+                                    refined info)</small></h5>
                             <div class="card-body bg-light">
                                 <div id="crimeMap" class="card-img-top"></div>
                             </div>
@@ -60,16 +61,16 @@
                             <h5 class="card-header text-white bg-secondary">Month total</h5>
                             <div class="card-body bg-light">
                                 <div id="monthTotal" class="card-img-top"></div>
-                            </div>                            
+                            </div>
                         </div>
                     </div>
 
                     <div class="col-sm-12 col-md-4">
                         <div class="card" id="four">
-                                <h5 class="card-header text-white bg-secondary">Outcome of Crime</h5>
+                            <h5 class="card-header text-white bg-secondary">Outcome of Crime</h5>
                             <div class="card-body bg-light">
                                 <div id="crimeOutcome" class="card-img-top"></div>
-                            </div>                            
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -82,6 +83,9 @@
     <script type="text/javascript" src="scripts/crossfilter.min.js"></script>
     <script type="text/javascript" src="scripts/dc.min.js"></script>
     <script type="text/javascript" src="scripts/queue.min.js"></script>
+    <script src="https://d3js.org/d3-color.v1.min.js"></script>
+    <script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
     <script type="text/javascript" src="scripts/main.js"></script>
 
 </body>

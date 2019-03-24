@@ -56,18 +56,20 @@ h5 small {
 @media (max-width: 766px) {
     .left-bar {
         min-height: 10vh;
-        background: red;
     }
     
     .dc-chart{
         width: 90vw;
     }
     .dc-chart .dc-select-menu {
-        background: yellow;
+        background: transparent;
         text-align: center;
         color: rgb(224, 224, 224);
         overflow: hidden;
         border: none;
         width: 100%;
+
+        .dc-select-option {
+        }
     }
 }
