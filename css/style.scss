@@ -1,9 +1,10 @@
 $backgroundGrey: rgb(209, 209, 209);
-$leftBackground: rgb(59, 59, 59);
+$leftBackground: #16262E;
 
 body {
     background-color: $backgroundGrey;
     color: rgb(167, 167, 167);
+    border-top: 2px solid #355c7d;
 }
 
 h5 small {
@@ -12,8 +13,16 @@ h5 small {
     word-spacing: -0.5px;
 }
 
+.bg-crime {
+    background-color: #21405c !important;
+}
+
+.bg-crime-second {
+    background-color: #3e719e !important;
+}
+
 #loader {
-    background:$backgroundGrey;
+    background: $backgroundGrey;
     width: 100%;
     height: 100%;
     position: absolute;
@@ -21,8 +30,30 @@ h5 small {
 }
 
 .left-bar {
-    min-height: 50vh;
-    background: $leftBackground;
+    background-color: $leftBackground;
+    min-height: 10px;
+
+    .left-bar-body {
+        overflow: auto;
+        padding: 3px;
+        margin: 5px 0 0 0;
+    }
+}
+
+.btn-crime {
+    background-color: #7CAE7A;
+    border-color: #7CAE7A;
+
+    a {
+        color: #eee;
+        text-decoration: none;
+    }
+}
+
+.btn-crime:hover {
+    color: #fff;
+    background-color: #839073;
+    border-color: #7CAE7A;
 }
 
 .main-body {
@@ -40,7 +71,7 @@ h5 small {
     fill: rgb(34, 34, 34);
 }
 
-.dc-chart {}
+// .dc-chart {}
 
 .dc-chart .dc-select-menu {
     background: transparent;
@@ -51,16 +82,17 @@ h5 small {
     width: 100%;
 }
 
-.dc-chart .dc-select-menu .dc-select-option {}
+// .dc-chart .dc-select-menu .dc-select-option {}
 
 @media (max-width: 766px) {
     .left-bar {
         min-height: 10vh;
     }
-    
-    .dc-chart{
+
+    .dc-chart {
         width: 90vw;
     }
+
     .dc-chart .dc-select-menu {
         background: transparent;
         text-align: center;
@@ -69,7 +101,6 @@ h5 small {
         border: none;
         width: 100%;
 
-        .dc-select-option {
-        }
+        // .dc-select-option {}
     }
 }

@@ -106,7 +106,7 @@ function crimeMap(ndx, mapJson) {
     var projection = d3.geo.mercator().center(centre).scale(scale).translate([middle, hMiddle]);
 
     mapRegion
-        .width(width / 2)
+        .width(400)
         .height(height)
         .dimension(regions)
         .projection(projection)

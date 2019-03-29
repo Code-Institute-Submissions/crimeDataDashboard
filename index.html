@@ -13,22 +13,21 @@
 </head>
 
 <body>
-    <nav class="navbar sticky-top navbar-dark bg-dark">
+    <nav class="navbar sticky-top navbar-dark bg-crime">
         <span class="navbar-brand mb-0 h1">Street crime in Hertfordshire</span>
         <span id="totalCrime" class="h4 text-white"></span>
-        <span class="navbar-text">
-            <button class="btn btn-dark"><a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a></button>
-        </span>
     </nav>
 
     <main class="container-fluid">
         <div class="row">
             <!-- Left coloumn for month selection -->
             <div class="col-sm-12 col-md-2 col-lg-1 left-bar">
-                <div class="col-sm-12">
-                    <div id="monthSelect" class="text-center">
-                        <h5>Select Month<br><small>(Ctrl + Click to select multiple)</small></h5>
-                    </div>
+                <div id="monthSelect" class="text-white text-center left-bar-body">
+                    <h5>Select Month<br><small>(Ctrl + Click to select multiple)</small></h5>
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-crime"><a href="javascript:dc.filterAll(); dc.renderAll();">Reset
+                            All</a></button>
                 </div>
             </div>
 
@@ -39,7 +38,7 @@
 
                     <div class="col-sm-12">
                         <div class="card" id="one">
-                            <h5 class="card-header text-white bg-secondary">Crime Map <small>(Click on a region for
+                            <h5 class="card-header text-white bg-crime-second">Crime Map <small>(Click on a region for
                                     refined info)</small></h5>
                             <div class="card-body bg-light">
                                 <div id="crimeMap" class="card-img-top"></div>
@@ -47,9 +46,10 @@
                         </div>
                     </div>
 
+
                     <div class="col-sm-12 col-md-4">
                         <div class="card" id="two">
-                            <h5 class="card-header text-white bg-secondary">Type of crime</h5>
+                            <h5 class="card-header text-white bg-crime-second">Type of crime</h5>
                             <div class="card-body bg-light">
                                 <div id="crimeType" class="card-img-top"></div>
                             </div>
@@ -58,7 +58,7 @@
 
                     <div class="col-sm-12 col-md-4">
                         <div class="card" id="three">
-                            <h5 class="card-header text-white bg-secondary">Month total</h5>
+                            <h5 class="card-header text-white bg-crime-second">Month total</h5>
                             <div class="card-body bg-light">
                                 <div id="monthTotal" class="card-img-top"></div>
                             </div>
@@ -67,7 +67,7 @@
 
                     <div class="col-sm-12 col-md-4">
                         <div class="card" id="four">
-                            <h5 class="card-header text-white bg-secondary">Outcome of Crime</h5>
+                            <h5 class="card-header text-white bg-crime-second">Outcome of Crime</h5>
                             <div class="card-body bg-light">
                                 <div id="crimeOutcome" class="card-img-top"></div>
                             </div>

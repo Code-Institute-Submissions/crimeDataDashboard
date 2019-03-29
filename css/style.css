@@ -1,12 +1,21 @@
 body {
   background-color: #d1d1d1;
   color: #a7a7a7;
+  border-top: 2px solid #355c7d;
 }
 
 h5 small {
   font-size: 12px;
   letter-spacing: -0.5px;
   word-spacing: -0.5px;
+}
+
+.bg-crime {
+  background-color: #21405c !important;
+}
+
+.bg-crime-second {
+  background-color: #3e719e !important;
 }
 
 #loader {
@@ -18,8 +27,30 @@ h5 small {
 }
 
 .left-bar {
-  min-height: 50vh;
-  background: #3b3b3b;
+  background-color: #16262E;
+  min-height: 10px;
+}
+
+.left-bar .left-bar-body {
+  overflow: auto;
+  padding: 3px;
+  margin: 5px 0 0 0;
+}
+
+.btn-crime {
+  background-color: #7CAE7A;
+  border-color: #7CAE7A;
+}
+
+.btn-crime a {
+  color: #eee;
+  text-decoration: none;
+}
+
+.btn-crime:hover {
+  color: #fff;
+  background-color: #839073;
+  border-color: #7CAE7A;
 }
 
 .main-body {
