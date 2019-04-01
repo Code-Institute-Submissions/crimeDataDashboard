@@ -68,9 +68,9 @@ function totalCrime(ndx) {
             return d;
         })
         .html({
-            one: '%number Crime',
-            some: '%number Crimes',
-            none: 'No Records'
+            one: '%number Total Reported Crime',
+            some: '%number Total reported Crimes',
+            none: 'No Total To Display.'
         });
 }
 
@@ -106,7 +106,7 @@ function crimeMap(ndx, mapJson) {
     var projection = d3.geo.mercator().center(centre).scale(scale).translate([middle, hMiddle]);
 
     mapRegion
-        .width(400)
+        .width(width)
         .height(height)
         .dimension(regions)
         .projection(projection)

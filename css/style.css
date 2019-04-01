@@ -1,7 +1,9 @@
 body {
-  background-color: #16262E;
+  height: 100vh;
+  background-color: #d1d1d1;
   color: #a7a7a7;
   border-top: 2px solid #355c7d;
+  font-size: 10px;
 }
 
 h5 small {
@@ -15,11 +17,18 @@ h5 small {
 }
 
 .bg-crime-second {
-  background-color: #3e719e !important;
+  background-color: #355c7d !important;
+}
+
+#totalCrime {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  margin: 2px;
 }
 
 #loader {
-  background: #16262E;
+  background: #d1d1d1;
   position: absolute;
   z-index: 100;
   right: 0;
@@ -29,14 +38,24 @@ h5 small {
 }
 
 .left-bar {
-  background-color: #16262E;
-  min-height: 10px;
+  background-color: #484b4d;
+  min-height: 100%;
+  padding-bottom: 10px;
 }
 
 .left-bar .left-bar-body {
   overflow: auto;
   padding: 3px;
   margin: 5px 0 0 0;
+  font-size: 1.2rem;
+}
+
+.left-bar .left-bar-body .dc-chart {
+  width: 100%;
+}
+
+#monthSelect {
+  width: 100%;
 }
 
 .btn-crime {
@@ -56,7 +75,8 @@ h5 small {
 }
 
 .main-body {
-  min-height: 50vh;
+  min-height: calc(100vh - 59px);
+  background-color: white;
 }
 
 .main-body .card {

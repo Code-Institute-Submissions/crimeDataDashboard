@@ -1,10 +1,16 @@
-$backgroundGrey: rgb(209, 209, 209);
-$darkBackground: #16262E;
+$lightGrey: rgb(209, 209, 209);
+$darkGrey: rgb(72, 75, 77);
+$lightBlue: #355c7d;
+$darkBlue: #21405c;
+$lightGreen: #7CAE7A;
+$darkGreen: #839073;
 
 body {
-    background-color: $darkBackground;
+    height: 100vh;
+    background-color: $lightGrey;
     color: rgb(167, 167, 167);
-    border-top: 2px solid #355c7d;
+    border-top: 2px solid $lightBlue;
+    font-size: 10px;
 }
 
 h5 small {
@@ -14,15 +20,22 @@ h5 small {
 }
 
 .bg-crime {
-    background-color: #21405c !important;
+    background-color: $darkBlue !important;
 }
 
 .bg-crime-second {
-    background-color: #3e719e !important;
+    background-color: $lightBlue !important;
+}
+
+#totalCrime {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    margin: 2px;
 }
 
 #loader {
-    background: $darkBackground;
+    background: $lightGrey;
     position: absolute;
     z-index: 100;
     right: 0;
@@ -32,19 +45,29 @@ h5 small {
 }
 
 .left-bar {
-    background-color: $darkBackground;
-    min-height: 10px;
+    background-color: $darkGrey;
+    min-height: 100%;
+    padding-bottom: 10px;
 
     .left-bar-body {
         overflow: auto;
         padding: 3px;
         margin: 5px 0 0 0;
+        font-size: 1.2rem;
+
+        .dc-chart {
+            width: 100%;
+        }
     }
 }
 
+#monthSelect {
+    width: 100%;
+}
+
 .btn-crime {
-    background-color: #7CAE7A;
-    border-color: #7CAE7A;
+    background-color: $lightGreen;
+    border-color: $lightGreen;
 
     a {
         color: #eee;
@@ -54,12 +77,13 @@ h5 small {
 
 .btn-crime:hover {
     color: #fff;
-    background-color: #839073;
-    border-color: #7CAE7A;
+    background-color: $darkGreen;
+    border-color: $lightGreen;
 }
 
 .main-body {
-    min-height: 50vh;
+    min-height: calc(100vh - 59px);
+    background-color: white;
 
     .card {
         background: transparent;
