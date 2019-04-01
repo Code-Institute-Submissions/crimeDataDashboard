@@ -35,6 +35,17 @@ h5 small {
   bottom: 0;
   left: 0;
   top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#loader .loadText {
+  margin-top: 10%;
+  color: #484b4d;
 }
 
 .left-bar {
