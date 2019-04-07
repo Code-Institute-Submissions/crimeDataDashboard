@@ -123,7 +123,20 @@ h5 small {
     color: #e0e0e0;
     overflow: hidden;
     border: none;
-    width: 100%;
+  }
+  .dc-chart th {
+    text-align: left;
+  }
+  .dc-chart th,
+  .dc-chart td {
+    padding-left: 10px;
+  }
+  .dc-chart tr.dc-table-group td {
+    padding-top: 4px;
+    border-bottom: 1px solid black;
+  }
+  .dc-chart select {
+    width: 150px;
   }
 }
 /*# sourceMappingURL=style.css.map */

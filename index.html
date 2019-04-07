@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    <!-- Top bar with title, no need for navigation -->
     <nav class="navbar sticky-top navbar-dark bg-crime">
         <span class="navbar-brand mb-0 h1">Street crime in Hertfordshire</span>
     </nav>
@@ -21,10 +22,12 @@
         <div class="row">
             <!-- Left coloumn for month selection -->
             <div class="col-sm-12 col-md-2 col-lg-2 left-bar">
+                <!-- Container for mont select menu -->
                 <div id="monthSelect" class="text-white text-center left-bar-body">
                     <h5>Select Month<br><small>(Ctrl + Click to select multiple)</small></h5>
                 </div>
                 <div class="text-center">
+                    <!-- Reset all charts to initial display -->
                     <button class="btn btn-crime"><a href="javascript:dc.filterAll(); dc.renderAll();">Reset
                             All</a></button>
                 </div>
@@ -33,12 +36,16 @@
             <!-- Main section for all data rendering -->
             <div class="col-sm-12 col-md-10 col-lg-10 main-body">
                 <div class="row">
+
+                    <!-- Number display of total crimes container -->
                     <h2 id="totalCrime" class="text-dark"></h2>
 
+                    <!-- Data loader, displays when the data is taking its time loading! -->
                     <div id="loader">
                         <h4 class="loadText">Loading Data, One Moment...</h4>
                     </div>
 
+                    <!-- Bootstrap elemetns for displaying map -->
                     <div class="col-sm-12">
                         <div class="card" id="one">
                             <h5 class="card-header text-white bg-crime-second">Crime Map <small>(Click on a region for
@@ -49,8 +56,8 @@
                         </div>
                     </div>
 
-
-                    <div class="col-sm-12 col-md-4">
+                    <!-- Bootstrap elemetns for displaying pie chart -->
+                    <div class="col-sm-12 col-md-6 col-lg-4">
                         <div class="card" id="two">
                             <h5 class="card-header text-white bg-crime-second">Type of crime</h5>
                             <div class="card-body bg-light">
@@ -59,7 +66,8 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-12 col-md-4">
+                    <!-- Bootstrap elemetns for displaying bar chart -->
+                    <div class="col-sm-12 col-md-6 col-lg-4">
                         <div class="card" id="three">
                             <h5 class="card-header text-white bg-crime-second">Month total</h5>
                             <div class="card-body bg-light">
@@ -68,7 +76,8 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-12 col-md-4">
+                    <!-- Bootstrap elemetns for displaying row chart -->
+                    <div class="col-sm-12 col-md-12 col-lg-4">
                         <div class="card" id="four">
                             <h5 class="card-header text-white bg-crime-second">Outcome of Crime</h5>
                             <div class="card-body bg-light">

@@ -1,3 +1,4 @@
+// CSS color valiables
 $lightGrey: rgb(209, 209, 209);
 $darkGrey: rgb(72, 75, 77);
 $lightBlue: #355c7d;
@@ -5,6 +6,7 @@ $darkBlue: #21405c;
 $lightGreen: #7CAE7A;
 $darkGreen: #839073;
 
+// Stlye for body
 body {
     height: 100vh;
     background-color: $lightGrey;
@@ -13,6 +15,7 @@ body {
     font-size: 10px;
 }
 
+// header overides
 h5 small {
     font-size: 12px;
     letter-spacing: -0.5px;
@@ -34,6 +37,7 @@ h5 small {
     margin: 2px;
 }
 
+// Loader stlyling
 #loader {
     background: $lightGrey;
     position: absolute;
@@ -51,6 +55,7 @@ h5 small {
     }
 }
 
+// Side bar
 .left-bar {
     background-color: $darkGrey;
     min-height: 100%;
@@ -72,6 +77,7 @@ h5 small {
     width: 100%;
 }
 
+// Button style
 .btn-crime {
     background-color: $lightGreen;
     border-color: $lightGreen;
@@ -88,6 +94,7 @@ h5 small {
     border-color: $lightGreen;
 }
 
+// Main body styles
 .main-body {
     min-height: calc(100vh - 59px);
     background-color: white;
@@ -104,8 +111,6 @@ h5 small {
     fill: rgb(34, 34, 34);
 }
 
-// .dc-chart {}
-
 .dc-chart .dc-select-menu {
     background: transparent;
     text-align: center;
@@ -115,8 +120,7 @@ h5 small {
     width: 100%;
 }
 
-// .dc-chart .dc-select-menu .dc-select-option {}
-
+// Screensize amendments
 @media (max-width: 766px) {
     .left-bar {
         min-height: 10vh;
@@ -132,8 +136,26 @@ h5 small {
         color: rgb(224, 224, 224);
         overflow: hidden;
         border: none;
-        width: 100%;
 
-        // .dc-select-option {}
+        .dc-select-option {}
     }
+
+    .dc-chart th {
+        text-align: left
+    }
+
+    .dc-chart th,
+    .dc-chart td {
+        padding-left: 10px;
+    }
+
+    .dc-chart tr.dc-table-group td {
+        padding-top: 4px;
+        border-bottom: 1px solid black;
+    }
+
+    .dc-chart select {
+        width: 150px;
+    }
+
 }
