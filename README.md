@@ -3,7 +3,7 @@
 This project it set visually display the data gathered by the Police Force in Hertfordshire (the county I live in) showing the amount, location and outcomes of street level crimes from Januray to December 2018. The aim of this dashboard to to share the data in a visual manner to those who may be interested.
 
 ## UX
-[Link to site](https://samuelwatson89.github.io/crimeDataDashboard/)
+[Mock up of site](CrimeDashboardLayout.png)
 
 ## Features
 
