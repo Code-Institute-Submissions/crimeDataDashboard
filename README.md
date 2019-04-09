@@ -3,6 +3,14 @@
 This project it set visually display the data gathered by the Police Force in Hertfordshire (the county I live in) showing the amount, location and outcomes of street level crimes from Januray to December 2018. The aim of this dashboard to to share the data in a visual manner to those who may be interested.
 
 ## UX
+
+The aim for this site is to produce a clear display of crime data from the Hertfordshire region. Separating the data into easy to read charts which display different elements of the data.
+
+A easy to navigate month selector will allow the user to quickly pick month they are interested in.
+An easy to view map of the area, so the user can select a region they are interested.
+The type of crime of which was reported.
+The outcomes of all the reported crimes, to allow the user to see how crimes has been dealt with.
+
 [Mock up of site](CrimeDashboardLayout.png)
 
 ## Features
@@ -46,7 +54,6 @@ The dashboard has been deployed on Git Hub Pages:
 Only a single version has been worked on in the master branch
 
 ## Credits
-
 
 ### Content
 

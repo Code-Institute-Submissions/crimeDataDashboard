@@ -1,6 +1,8 @@
 // CSS color valiables
-$lightGrey: rgb(209, 209, 209);
-$darkGrey: rgb(72, 75, 77);
+$lightGrey: #d1d1d1;
+$bg: #a7a7a7;
+$sideGrey: #727272;
+$darkGrey: #484b4d;
 $lightBlue: #355c7d;
 $darkBlue: #21405c;
 $lightGreen: #7CAE7A;
@@ -10,8 +12,8 @@ $darkGreen: #839073;
 body {
     height: 100vh;
     background-color: $lightGrey;
-    color: rgb(167, 167, 167);
-    border-top: 2px solid $lightBlue;
+    color: $bg;
+    border-top: 5px solid $lightBlue;
     font-size: 10px;
 }
 
@@ -23,7 +25,7 @@ h5 small {
 }
 
 .bg-crime {
-    background-color: $darkBlue !important;
+    background-color: $darkGrey !important;
 }
 
 .bg-crime-second {
@@ -57,7 +59,7 @@ h5 small {
 
 // Side bar
 .left-bar {
-    background-color: $darkGrey;
+    background-color: $sideGrey;
     min-height: 100%;
     padding-bottom: 10px;
 
@@ -101,20 +103,20 @@ h5 small {
 
     .card {
         background: transparent;
-        color: rgb(34, 34, 34);
+        color: #222222;
         margin-top: 5px;
     }
 }
 
 /* Row chart settings */
 .dc-chart g.row text {
-    fill: rgb(34, 34, 34);
+    fill: #222222;
 }
 
 .dc-chart .dc-select-menu {
     background: transparent;
     text-align: center;
-    color: rgb(224, 224, 224);
+    color: #e0e0e0;
     overflow: hidden;
     border: none;
     width: 100%;
@@ -133,11 +135,9 @@ h5 small {
     .dc-chart .dc-select-menu {
         background: transparent;
         text-align: center;
-        color: rgb(224, 224, 224);
+        color: #e0e0e0;
         overflow: hidden;
         border: none;
-
-        .dc-select-option {}
     }
 
     .dc-chart th {
