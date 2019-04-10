@@ -29,7 +29,9 @@ The outcomes of all the reported crimes, to allow the user to see how crimes has
     - This is used for the main structre of the web page
 - [CSS](https://www.w3schools.com/css)
     - This is used fot the main styling of the web page
-- [JavaScript](https://www.w3schools.com/js/))
+- [SASS](https://sass-lang.com/documentation/file.SCSS_FOR_SASS_USERS.html)
+    - CSS Preprocessor, compiled using [Live SASS compilier](https://github.com/ritwickdey/vscode-live-sass-compiler) for VSCode
+- [JavaScript](https://www.w3schools.com/js/)
     - This is used for the main interctivity of the webpage
 - [D3.js](https://d3js.org/)
     - This is a libaray used to create and render charts using SVG elements to display data in a visual format
@@ -45,6 +47,11 @@ The outcomes of all the reported crimes, to allow the user to see how crimes has
     - Used to creat the spinner while the data is being loaded.
 
 ## Testing
+
+HTML code validated with [HTML Validator](https://validator.w3.org)
+CSS code validated with [CSS Validator](https://www.w3.org/)
+
+Full tests of site can be found [here(#)]
 
 
 ## Deployment

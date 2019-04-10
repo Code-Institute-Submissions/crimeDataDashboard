@@ -28,17 +28,17 @@
                 </div>
                 <div class="text-center">
                     <!-- Reset all charts to initial display -->
-                    <button class="btn btn-crime"><a href="javascript:dc.filterAll(); dc.renderAll();">Reset
-                            All</a></button>
+                    <button class="btn btn-crime">
+                        <a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a>
+                    </button>
                 </div>
             </div>
 
             <!-- Main section for all data rendering -->
             <div class="col-sm-12 col-md-10 col-lg-10 main-body">
                 <div class="row">
-
                     <!-- Number display of total crimes container -->
-                    <h2 id="totalCrime" class="text-dark"></h2>
+                    <h3 id="totalCrime" class="text-dark">&nbsp;</h3>
 
                     <!-- Data loader, displays when the data is taking its time loading! -->
                     <div id="loader">
@@ -48,8 +48,10 @@
                     <!-- Bootstrap elemetns for displaying map -->
                     <div class="col-sm-12">
                         <div class="card" id="one">
-                            <h5 class="card-header text-white bg-crime-second">Crime Map <small>(Click on a region for
-                                    refined info)</small></h5>
+                            <h5 class="card-header text-white bg-crime-second">
+                                Crime Map <small>(Click on a region for refined info)</small>
+                            </h5>
+
                             <div class="card-body bg-light">
                                 <div id="crimeMap" class="card-img-top"></div>
                             </div>
@@ -87,18 +89,19 @@
                     </div>
                 </div>
             </div>
+        </div>
     </main>
 
     <!-- <script type="text/javascript" src="scripts/bootstrap.min.js"></script>-->
-    <script type="text/javascript" src="scripts/spin.js"></script>
-    <script type="text/javascript" src="scripts/d3.min.js"></script>
-    <script type="text/javascript" src="scripts/crossfilter.min.js"></script>
-    <script type="text/javascript" src="scripts/dc.min.js"></script>
-    <script type="text/javascript" src="scripts/queue.min.js"></script>
-    <script type="text/javascript" src="https://d3js.org/d3-color.v1.min.js"></script>
-    <script type="text/javascript" src="https://d3js.org/d3-interpolate.v1.min.js"></script>
-    <script type="text/javascript" src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-    <script type="text/javascript" src="scripts/main.js"></script>
+    <script src="scripts/spin.js"></script>
+    <script src="scripts/d3.min.js"></script>
+    <script src="scripts/crossfilter.min.js"></script>
+    <script src="scripts/dc.min.js"></script>
+    <script src="scripts/queue.min.js"></script>
+    <script src="https://d3js.org/d3-color.v1.min.js"></script>
+    <script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="scripts/main.js"></script>
 
 </body>
 
