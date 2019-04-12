@@ -48,7 +48,7 @@ The outcomes of all the reported crimes, to allow the user to see how crimes has
 
 ## Testing
 
-Full tests of site can be found [here(#)]
+Full tests of site can be found [here](testing.md)
 
 ## Deployment
 
