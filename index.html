@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Crime In Hertfordshire</title>
+    <title>𝖧𝖾𝗋𝗍𝖿𝗈𝗋𝖽𝗌𝗁𝗂𝗋𝖾 𝖲𝗍𝗋𝖾𝖾𝗍 𝖢𝗋𝗂𝗆𝖾</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/dc.min.css">
     <link rel="stylesheet" href="css/spin.css">
@@ -15,7 +16,7 @@
 <body>
     <!-- Top bar with title, no need for navigation -->
     <nav class="navbar sticky-top navbar-dark bg-crime">
-        <span class="navbar-brand mb-0 h1">Street crime in Hertfordshire</span>
+        <h1 class="navbar-brand mb-0">Street crime in Hertfordshire in 2018</h1>
     </nav>
 
     <main class="container-fluid">
@@ -23,11 +24,11 @@
             <!-- Left coloumn for month selection -->
             <div class="col-sm-12 col-md-2 col-lg-2 left-bar">
                 <!-- Container for mont select menu -->
-                <div id="monthSelect" class="text-white text-center left-bar-body">
+                <div aria-label="Month Select Menu" id="monthSelect" class="text-white text-center left-bar-body">
                     <h5>Select Month<br><small>(Ctrl + Click to select multiple)</small></h5>
                 </div>
                 <div class="text-center">
-                    <!-- Reset all charts to initial display -->
+                    <!-- Button to reset all charts to initial display -->
                     <button class="btn btn-crime">
                         <a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a>
                     </button>
@@ -45,7 +46,7 @@
                         <h4 class="loadText">Loading Data, One Moment...</h4>
                     </div>
 
-                    <!-- Bootstrap elemetns for displaying map -->
+                    <!-- Bootstrap elements for displaying map -->
                     <div class="col-sm-12">
                         <div class="card" id="one">
                             <h5 class="card-header text-white bg-crime-second">
@@ -53,13 +54,18 @@
                             </h5>
 
                             <div class="card-body bg-light">
-                                <div id="crimeMap" class="card-img-top"></div>
+                                <div id="crimeMap" class="card-img-top">
+                                    <div class="mapLegend">
+                                        <span class="hi">High</span>
+                                        <span class="lo">Low</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Bootstrap elemetns for displaying pie chart -->
-                    <div class="col-sm-12 col-md-6 col-xl-4">
+                    <!-- Bootstrap elements for displaying pie chart -->
+                    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4">
                         <div class="card" id="two">
                             <h5 class="card-header text-white bg-crime-second">Type of crime</h5>
                             <div class="card-body bg-light">
@@ -68,7 +74,7 @@
                         </div>
                     </div>
 
-                    <!-- Bootstrap elemetns for displaying bar chart -->
+                    <!-- Bootstrap elements for displaying bar chart -->
                     <div class="col-sm-12 col-md-6 col-xl-4">
                         <div class="card" id="three">
                             <h5 class="card-header text-white bg-crime-second">Month total</h5>
@@ -78,7 +84,7 @@
                         </div>
                     </div>
 
-                    <!-- Bootstrap elemetns for displaying row chart -->
+                    <!-- Bootstrap elements for displaying row chart -->
                     <div class="col-sm-12 col-md-12 col-xl-4">
                         <div class="card" id="four">
                             <h5 class="card-header text-white bg-crime-second">Outcome of Crime</h5>
@@ -92,7 +98,6 @@
         </div>
     </main>
 
-    <!-- <script type="text/javascript" src="scripts/bootstrap.min.js"></script>-->
     <script src="scripts/spin.js"></script>
     <script src="scripts/d3.min.js"></script>
     <script src="scripts/crossfilter.min.js"></script>

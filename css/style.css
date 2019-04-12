@@ -49,7 +49,7 @@ h5 small {
 }
 
 .left-bar {
-  background-color: #727272;
+  background-color: #505050;
   min-height: 100%;
   padding-bottom: 10px;
 }
@@ -70,19 +70,20 @@ h5 small {
 }
 
 .btn-crime {
-  background-color: #7CAE7A;
-  border-color: #7CAE7A;
+  background-color: #6bc768;
+  border-color: #6bc768;
 }
 
 .btn-crime a {
-  color: #eee;
+  color: #121212;
   text-decoration: none;
+  text-shadow: 0.2px 0.2px 0px rgba(0, 0, 0, 0.4);
 }
 
 .btn-crime:hover {
-  color: #fff;
-  background-color: #839073;
-  border-color: #7CAE7A;
+  color: #eee;
+  background-color: #91aa73;
+  border-color: #6bc768;
 }
 
 .main-body {
@@ -94,6 +95,35 @@ h5 small {
   background: transparent;
   color: #222222;
   margin-top: 5px;
+  -webkit-box-shadow: 0 0.5px 0 0.1px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 0.5px 0 0.1px rgba(0, 0, 0, 0.4);
+}
+
+.main-body .card .card-body {
+  padding: 10px;
+}
+
+.mapLegend {
+  position: absolute;
+}
+
+.mapLegend span {
+  display: block;
+  padding: 4px;
+  margin: 1.5px;
+  color: #f3f3f3;
+  font-size: 1.4em;
+  text-align: center;
+  -webkit-box-shadow: 0 0.5px 0 0.1px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 0.5px 0 0.1px rgba(0, 0, 0, 0.4);
+}
+
+.mapLegend .hi {
+  background: #f67280;
+}
+
+.mapLegend .lo {
+  background: #355c7d;
 }
 
 /* Row chart settings */
