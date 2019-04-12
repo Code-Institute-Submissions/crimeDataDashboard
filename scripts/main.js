@@ -153,7 +153,7 @@ function crimeMap(ndx, mapJson) {
 // Type of crime in pie chart format
 function crimeType(ndx) {
     var width = document.getElementById("two").offsetWidth;
-    var height = width / 2;
+    var height = width / 1.6;
     var typeDim = ndx.dimension(dc.pluck('Crime type'));
     var typeGroup = typeDim.group();
     var middle = width / 2; // Calculate where middle of the container
@@ -185,7 +185,13 @@ function crimeOutcome(ndx) {
 
     dc.rowChart("#crimeOutcome")
         .width(width)
-        .height(width / 2)
+        .height(width / 1.6)
+        .label(function (d) { // 
+            if (d.key === "") {
+                return "No outcome recorded - ASB";
+            }
+            return d.key;
+        })
         .dimension(outcomeDim)
         .group(outcomeGroup)
         .valueAccessor(function (p) {
@@ -207,10 +213,10 @@ function monthTotal(ndx) {
 
     chart
         .width(width)
-        .height(width / 2)
+        .height(width / 1.6)
         .margins({ // Set bar chart margins
             top: 10,
-            right: 50,
+            right: 10,
             bottom: 30,
             left: 50
         })
